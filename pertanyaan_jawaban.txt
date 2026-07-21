@@ -1,0 +1,16 @@
+Pertanyaan dari Repository: Chat Repository
+
+1. Kenapa kita menyimpan riwayat percakapan di database, bukan di Python saja?
+Karena dalam database data tetap ada ketika aplikasi python ditutup, mendukung banyak pengguna, riwayat chat sebelumnya dapat diakses kembali,
+mudah dicari dan dianalisis, dan skalabilitas
+2. Dari dua API key yang diberikan supabase, mana yang kita pakai sebagai SUPABASE_KEY di aplikasi?
+supabase key dambil dari legacy_anon, service_role API keys
+3. Apa fungsi dekorator @lru_cache pada function `get_supabase_client()`?
+Menjaga agar koneksinya tetap satu ketika dipanggil berulang kali di beberapa file
+Agar koneksi ke database itu tidak terjadi berkali-kali / koneksi dibuat sekali dan bisa dipakai secara berulang
+
+Pertanyaan dari Core: LLM
+
+Kenapa pembuatan cient dipusatkan pada llm.py?
+Karena membuat klien ada ongkosnya menyiapkan koneksi, membaca konfigurasi env, dan seterusnya
+Kalau setiap kali kita butuh gemini klien kita bikin baru maka itu pemborosan
