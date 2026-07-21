@@ -27,3 +27,7 @@ Ini masalah kalau kita ingin memakai bagian-bagian jawaban itu dalam program mis
 atau menyimpan skor ke database
 Solusinya: kita memberi tahu LLM dengan skema yang harus diikuti lalu jawabannya datang sebagai json yang rapi dan bisa langsung kita pakai
 Skema ditulis dengan dari library pydantic
+
+Pertanyaan dari Core: Format Markdown
+Apa yang dilakukan oleh function telegramify_markdown.markdownify(text) ?
+Memberi tahu LLM untuk mengubah markdown standard (output dari LLM) menjadi Telegram MarkdownV2 yang valid
