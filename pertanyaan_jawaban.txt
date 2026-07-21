@@ -14,3 +14,7 @@ Pertanyaan dari Core: LLM
 Kenapa pembuatan cient dipusatkan pada llm.py?
 Karena membuat klien ada ongkosnya menyiapkan koneksi, membaca konfigurasi env, dan seterusnya
 Kalau setiap kali kita butuh gemini klien kita bikin baru maka itu pemborosan
+
+Pertanyaan dari Core: Prompts
+
+Saat memanggil function load_instructions("agent-lead"), kenapa tidak perlu menulis ".md", misal: agent-lead.md?
