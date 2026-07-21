@@ -1,0 +1,1 @@
+# kumpulan fungsi-fungsi dari AI atau AI tools-nya

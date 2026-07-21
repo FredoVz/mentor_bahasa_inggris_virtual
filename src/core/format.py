@@ -1,0 +1,1 @@
+# Menyimpan cara untuk melakukan konversi tulisan atau jawaban dari AI ke dalam bentuk markdown yang dikenali oleh telepon

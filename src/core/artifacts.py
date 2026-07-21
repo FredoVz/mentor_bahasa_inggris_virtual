@@ -1,0 +1,1 @@
+# Sifatnya seperti keranjang, untuk menyimpan informasi dalam bentuk biner pada setiap request-request atau pada setiap percakapan yang terjadi antara manusia dengan AI dengan telegram bot-nya

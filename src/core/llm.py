@@ -1,0 +1,1 @@
+# Sifatnya menyimpan instans dari klien sdk Gemini

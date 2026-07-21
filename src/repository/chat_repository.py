@@ -1,0 +1,1 @@
+ # satu-satunya lapisan data untuk masuk ke database. Semua layer dari aplikasi kita apabila membutuhkan akses ke database terutama ke tabel chat history. Mengakses melalui file chat repository

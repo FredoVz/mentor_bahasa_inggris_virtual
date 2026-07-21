@@ -1,0 +1,1 @@
+# untuk me load atau untuk mengeluarkan dan melakukan validasi env

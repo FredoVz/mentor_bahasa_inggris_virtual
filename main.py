@@ -1,3 +1,5 @@
+# Memanggil function yang menginisialisasi aplikasi
+
 def main():
     print("Hello from mentor-bahasa-inggris-virtual!")
 
