@@ -1,38 +1,42 @@
-Pertanyaan dari Repository: Chat Repository
+=== Menjawab Quiz Level Advanced ===
+=== Pertanyaan dari Repository: Chat Repository ===
 
 1. Kenapa kita menyimpan riwayat percakapan di database, bukan di Python saja?
-Karena dalam database data tetap ada ketika aplikasi python ditutup, mendukung banyak pengguna, riwayat chat sebelumnya dapat diakses kembali,
+Jawaban : Karena dalam database data tetap ada ketika aplikasi python ditutup, mendukung banyak pengguna, riwayat chat sebelumnya dapat diakses kembali,
 mudah dicari dan dianalisis, dan skalabilitas
 2. Dari dua API key yang diberikan supabase, mana yang kita pakai sebagai SUPABASE_KEY di aplikasi?
-supabase key dambil dari legacy_anon, service_role API keys
+Jawaban : Supabase key dambil dari legacy_anon, service_role API keys
 3. Apa fungsi dekorator @lru_cache pada function `get_supabase_client()`?
-Menjaga agar koneksinya tetap satu ketika dipanggil berulang kali di beberapa file
+Jawaban : Menjaga agar koneksinya tetap satu ketika dipanggil berulang kali di beberapa file
 Agar koneksi ke database itu tidak terjadi berkali-kali / koneksi dibuat sekali dan bisa dipakai secara berulang
 
-Pertanyaan dari Core: LLM
+=== Pertanyaan dari Core: LLM ===
 
 Kenapa pembuatan cient dipusatkan pada llm.py?
-Karena membuat klien ada ongkosnya menyiapkan koneksi, membaca konfigurasi env, dan seterusnya
+Jawaban : Karena membuat klien ada ongkosnya menyiapkan koneksi, membaca konfigurasi env, dan seterusnya
 Kalau setiap kali kita butuh gemini klien kita bikin baru maka itu pemborosan
 
-Pertanyaan dari Core: Prompts
+=== Pertanyaan dari Core: Prompts ===
 
 Saat memanggil function load_instructions("agent-lead"), kenapa tidak perlu menulis ".md", misal: agent-lead.md?
+Jawaban : Tidak perlu menulis .md karena ekstensi tersebut sudah ditambahkan secara otomatis di dalam kode function itu sendiri.
+path = env.INSTRUCTIONS_DIR / f"{name}.md"
 
-Pertanyaan dari Core: Schemas
+=== Pertanyaan dari Core: Schemas ===
 
 1. Apa masalah utama dari jawaban LLM yang berupa teks bebas? dan bagaimana structured output menjadi solusinya?
-Masalah utama LLM jika kita meminta AI untuk dibuatkan soal listening jawaban bisa berupa paragraf panjang dengan format yang tidak terduga
+Jawaban : Masalah utama LLM jika kita meminta AI untuk dibuatkan soal listening jawaban bisa berupa paragraf panjang dengan format yang tidak terduga
 Ini masalah kalau kita ingin memakai bagian-bagian jawaban itu dalam program misalnya mengambil nama pembicara, mengambil daftar pertanyaan
 atau menyimpan skor ke database
 Solusinya: kita memberi tahu LLM dengan skema yang harus diikuti lalu jawabannya datang sebagai json yang rapi dan bisa langsung kita pakai
 Skema ditulis dengan dari library pydantic
 
-Pertanyaan dari Core: Format Markdown
-Apa yang dilakukan oleh function telegramify_markdown.markdownify(text) ?
-Memberi tahu LLM untuk mengubah markdown standard (output dari LLM) menjadi Telegram MarkdownV2 yang valid
+=== Pertanyaan dari Core: Format Markdown ===
 
-Pertanyaan dari Core; Artifacts
+Apa yang dilakukan oleh function telegramify_markdown.markdownify(text) ?
+Jawaban : Memberi tahu LLM untuk mengubah markdown standard (output dari LLM) menjadi Telegram MarkdownV2 yang valid
+
+=== Pertanyaan dari Core: Artifacts ===
 
 Apa peran dari contextvars di file ini?
-Senuah library python yang berperan sebagai fitur keranjang
+Jawaban : Sebuah library python yang berperan sebagai fitur keranjang
