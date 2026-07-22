@@ -1,1 +1,29 @@
 # Sifatnya seperti keranjang, untuk menyimpan informasi dalam bentuk biner pada setiap request-request atau pada setiap percakapan yang terjadi antara manusia dengan AI dengan telegram bot-nya
+
+import contextvars # fitur keranjang
+from typing import Optional, TypedDict # mengelola struktur datanya
+
+class Artifact(TypedDict):
+    path: str
+    kind: str # menyimpan jenis file "audio" / "document"
+    caption: Optional[str]
+
+_artifacts: contextvars.ContextVar[Optional[list[Artifact]]] = contextvars.ContextVar(
+    "artifacts", default=None
+)
+
+def start() -> None:
+    """Mulai keranjang artifact baru untuk request saat ini."""
+    _artifacts.set([]) # set keranjang list kosong
+
+def add(path: str, kind: str = "audio", caption: Optional[str] = None) -> None:
+    """Catat satu artifact untuk dikirim oleh layer pengiriman (CLI/Telegram)"""
+    bucket = _artifacts.get()
+    if bucket is None:
+        return
+    
+    bucket.append({"path": path, "kind": kind, "caption": caption})
+
+def collect() -> list[Artifact]:
+    """Ambil semua artifact yang terkumpul pada request ini"""
+    return _artifacts.get() or []

@@ -31,3 +31,8 @@ Skema ditulis dengan dari library pydantic
 Pertanyaan dari Core: Format Markdown
 Apa yang dilakukan oleh function telegramify_markdown.markdownify(text) ?
 Memberi tahu LLM untuk mengubah markdown standard (output dari LLM) menjadi Telegram MarkdownV2 yang valid
+
+Pertanyaan dari Core; Artifacts
+
+Apa peran dari contextvars di file ini?
+Senuah library python yang berperan sebagai fitur keranjang
