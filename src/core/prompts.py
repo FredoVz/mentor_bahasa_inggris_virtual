@@ -18,3 +18,5 @@ def load_instruction(name: str):
         ) # agent-lead, agent-led
     
     return path.read_text(encoding="utf-8")
+
+load_instruction("agent-skill___")

@@ -40,3 +40,14 @@ Jawaban : Memberi tahu LLM untuk mengubah markdown standard (output dari LLM) me
 
 Apa peran dari contextvars di file ini?
 Jawaban : Sebuah library python yang berperan sebagai fitur keranjang
+
+=== Pertanyaan dari Instructions ===
+
+1. Kenapa perilaku setiap agent ditulis pada file Markdown terpisah, bukan sebagai string di dalam kode Python?
+Memisahkan prompt dari kode ada keuntungan yang praktis, orang yang pandai menulis prompt belum tentu dia pandai menulis kode python. Bisa ikut
+memperbaiki perilaku agent hanya dengan mengedit file markdown. Kode python tetap bersih dan jarang berubah, sementara perilaku atau kepribadian
+agent bisa diatur secara bebas
+2. Sebutkan kerangka dari setiap instruction?
+- Role
+- Rules
+- Response
