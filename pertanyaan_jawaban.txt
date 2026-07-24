@@ -44,10 +44,16 @@ Jawaban : Sebuah library python yang berperan sebagai fitur keranjang
 === Pertanyaan dari Instructions ===
 
 1. Kenapa perilaku setiap agent ditulis pada file Markdown terpisah, bukan sebagai string di dalam kode Python?
-Memisahkan prompt dari kode ada keuntungan yang praktis, orang yang pandai menulis prompt belum tentu dia pandai menulis kode python. Bisa ikut
+Jawaban : Memisahkan prompt dari kode ada keuntungan yang praktis, orang yang pandai menulis prompt belum tentu dia pandai menulis kode python. Bisa ikut
 memperbaiki perilaku agent hanya dengan mengedit file markdown. Kode python tetap bersih dan jarang berubah, sementara perilaku atau kepribadian
 agent bisa diatur secara bebas
 2. Sebutkan kerangka dari setiap instruction?
+Jawaban :
 - Role
 - Rules
 - Response
+
+=== Pertanyaan dari Agents: Lead Agent (Orchestrator)
+
+Jelaskan kegunaan dari variable self.tool pada function handle_send_message?
+Jawaban : untuk implemntasi dari agentic workflow
