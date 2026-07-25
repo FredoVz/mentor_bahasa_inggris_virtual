@@ -57,3 +57,9 @@ Jawaban :
 
 Jelaskan kegunaan dari variable self.tool pada function handle_send_message?
 Jawaban : untuk implementasi dari agentic workflow untuk kebutuhan function calling dari AI Agent
+
+=== Pertanyaan dari Agents: Services (Function Calling) ===
+1. Apa maksud dari properti temperature?
+Jawaban : 
+2. Kenapa proses upload file audio perlu di periksa status PROCESSING nya
+Jawaban : 
