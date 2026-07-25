@@ -56,4 +56,4 @@ Jawaban :
 === Pertanyaan dari Agents: Lead Agent (Orchestrator)
 
 Jelaskan kegunaan dari variable self.tool pada function handle_send_message?
-Jawaban : untuk implemntasi dari agentic workflow
+Jawaban : untuk implementasi dari agentic workflow untuk kebutuhan function calling dari AI Agent

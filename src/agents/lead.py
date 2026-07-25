@@ -24,10 +24,10 @@ class LeadAgent:
         # chat repository
         self.chat_repository = ChatRepository()
 
-        # lead agent instrution
+        # lead agent instruction
         self.lead_agent_instruction = prompts.load_instruction("agent-lead")
 
-    # pythonic way: nama function dengan awalan _ akan dipanggil secara private
+    # pythonic way: nama function dengan awalan _ akan di panggil secara private
     def _load_history(self, user_id: int):
         """Mengambil history chat dari supabase kemudian diubah ke format Gemini"""
 
@@ -88,7 +88,7 @@ class LeadAgent:
         )
 
         self.chat_repository.save_message(
-            user_id=user_id, role="model", message_text=evaluation_speaking_result,
+            user_id=user_id, role="model", message_text=evaluation_speaking_result
         )
 
         return evaluation_speaking_result
