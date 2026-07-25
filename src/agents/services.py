@@ -127,7 +127,7 @@ def _listening_generate_audio_script(generate_script: ListeningExerciseSchema):
                                     voice_name="Puck"
                                 )
                             ),
-                        ), # speaker_one -> laki -laki -> Puck
+                        ), # speaker_one -> laki - laki -> Puck
                         types.SpeakerVoiceConfig(
                             speaker=speaker_two,
                             voice_config=types.VoiceConfig(
@@ -156,7 +156,7 @@ def _write_wave_file(
     rate: int = 24000,
     sample_width: int = 2,
 ):
-    with wave.open(audio_output_path, "wb") as wf:
+    with wave.open(str(audio_output_path), "wb") as wf:
         wf.setnchannels(channels)
         wf.setsampwidth(sample_width)
         wf.setframerate(rate)
@@ -221,12 +221,12 @@ def get_learning_tip():
         "Tonton film atau series berbahasa Inggris dengan subtitle bahasa Inggris, bukan Indonesia.",
         "Catat 5 kata baru setiap hari dan coba gunakan masing-masing dalam satu kalimat.",
         "Jangan takut salah - kesalahan adalah bagian dari proses belajar yang paling berharga.",
-        "Coba berpikir dalam Bahasa Inggris saat melakukan aktivitas sehari-hari"
+        "Coba berpikir dalam Bahasa Inggris saat melakukan aktivitas sehari-hari.",
     ]
     return random.choice(tips)
 
 def evaluate_writing(text: str):
-    """Melakukan evaluasi dan review terhadap grammar dan penulisan teks bahasa inggris yang dikirim oleh peserta"""
+    """Melakukan evaluasi dan review terhadap grammar dan penulisan dari teks bahasa inggris yang dikirim oleh peserta"""
 
     model = env.GEMINI_MODEL
     system_instruction = prompts.load_instruction("agent-evaluate-writing")
@@ -277,7 +277,7 @@ def generate_report(
     conversation_history: list[types.Content], # tipe contents Gemini
     username: str,
     start_date: str,
-    end_date: str
+    end_date: str,
 ):
     """Membuat laporan belajar bahasa inggris dalam rentang waktu tertentu"""
 
@@ -298,7 +298,7 @@ def generate_report(
     report_content = data.markdown_content
 
     env.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    report_file_path = env.OUTPUT_DIR / f"laporan-belajar-{timestamp}.md"
+    report_file_path = env.OUTPUT_DIR / f"laporan-belajar-{timestamp}.pdf"
 
     pdf = MarkdownPdf(toc_level=2)
     pdf.add_section(Section(report_content))
