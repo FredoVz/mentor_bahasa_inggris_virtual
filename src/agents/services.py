@@ -223,6 +223,7 @@ def get_learning_tip():
         "Jangan takut salah - kesalahan adalah bagian dari proses belajar yang paling berharga.",
         "Coba berpikir dalam Bahasa Inggris saat melakukan aktivitas sehari-hari.",
     ]
+
     return random.choice(tips)
 
 def evaluate_writing(text: str):

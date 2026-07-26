@@ -44,3 +44,13 @@ class LearningReportSchema(BaseModel): # laporan belajar
     markdown_content: str = Field(
         ... , description="Seluruh isi laporan dalam format markdown"
     )
+
+class EvaluateSpeakingSchema(BaseModel):
+    correction: str = Field(
+        ... , description="Catatan perbaikan pengucapan bahasa inggris untuk peserta"
+    )
+    score: str = Field(
+        ... , 
+        description="Rentang nilai dari 1 - 10 untuk pengucapan bahasa inggris dari peserta",
+    )
+    summary: str = Field(... , description="Gabungan antara correction dan score")

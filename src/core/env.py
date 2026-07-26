@@ -21,6 +21,8 @@ def _required_env(name: str) -> str:
     if not value:
         raise RuntimeError(f"env variable `{name}` belum di-set")
 
+    return value
+
 # Env Gemini
 GEMINI_API_KEY = _required_env("GEMINI_API_KEY")
 GEMINI_MODEL = _required_env("GEMINI_MODEL")
