@@ -1,0 +1,3 @@
+=== Contoh Prompt ===
+1. Buatkan saya soal latihan reading dengan tema Agentic AI with Python
+2. Buatkan saya latihan listening dengan tema seminar AI Engineering

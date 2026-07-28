@@ -1,0 +1,43 @@
+id,created_at,role,user_id,message_text,artifact
+1,2026-07-28 15:47:37.670288+00,user,101010,Buatkan saya soal latihan reading dengan tema Agentic AI with Python,
+2,2026-07-28 15:47:51.136231+00,model,101010,"Tentu! Ini adalah soal latihan *reading* pendek mengenai **Agentic AI with Python**. Silakan baca teks berikut dan jawab pertanyaannya ya.
+
+***
+
+### **The Rise of Agentic AI with Python**
+
+Python has become the primary language for developing ""Agentic AI."" Unlike traditional AI that only answers questions, Agentic AI can perform tasks independently. For example, a Python-based agent can read your emails, find important meetings, and automatically add them to your calendar.
+
+Developers use libraries like *LangChain* or *AutoGPT* to build these agents. By writing specific scripts in Python, we give the AI a ""goal"" to achieve. This technology is very exciting because it allows computers to act as smart assistants that can solve complex problems without constant human supervision.
+
+***
+
+**Questions:**
+
+1. **What is the main difference between traditional AI and Agentic AI?**
+2. **Mention one example of a task an Agentic AI can do mentioned in the text.**
+3. **What are the examples of Python libraries used to build these agents?**
+4. **In your opinion, why is Agentic AI useful for busy people?** (Answer in English)
+
+*Silakan tuliskan jawabanmu di sini, nanti saya akan bantu periksa! Semangat!*",
+3,2026-07-28 15:51:33.089545+00,user,101010,Buatkan saya latihan listening dengan tema seminar AI Engineering,
+4,2026-07-28 15:52:03.623362+00,model,101010,[audio],D:\Python\mentor_bahasa_inggris_virtual\src\output\listening-20260728-225126-721292.wav
+5,2026-07-28 15:52:04.132197+00,model,101010,"Tentu! Mari kita mulai latihan *listening* kita hari ini. Tema kali ini adalah **AI Engineering Seminar**.
+
+Silakan dengarkan audio yang terlampir pada pesan ini, lalu jawablah pertanyaan-pertanyaan berikut berdasarkan apa yang kamu dengar:
+
+***
+
+### **Comprehension Questions:**
+
+1. **What is the main topic of the seminar?**
+2. **What time does the seminar start?**
+3. **Where will the seminar take place?**
+
+***
+
+**Tips:** 
+*   Jangan ragu untuk memutar audio lebih dari satu kali jika ada bagian yang kurang jelas.
+*   Fokus pada kata kunci seperti waktu dan lokasi.
+
+*Tuliskan jawabanmu di bawah ya, nanti saya bantu koreksi! Happy listening!* 🎧",
