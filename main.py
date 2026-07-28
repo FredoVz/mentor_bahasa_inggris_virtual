@@ -1,8 +1,9 @@
 # Memanggil function yang menginisialisasi aplikasi
 
-def main():
-    print("Hello from mentor-bahasa-inggris-virtual!")
+import src.app_cli as app
 
+def main():
+    app.run()
 
 if __name__ == "__main__":
     main()
