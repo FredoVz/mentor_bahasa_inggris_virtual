@@ -253,6 +253,8 @@ def evaluate_writing(text: str):
         ),
     )
 
+    logger.success("success evaluate writing")
+
     return response.text
 
 def evaluate_speaking(voice_file_path: str):
@@ -283,6 +285,8 @@ def evaluate_speaking(voice_file_path: str):
     )
 
     data = EvaluateSpeakingSchema.model_validate(json.loads(response.text))
+
+    logger.success("success evaluate speaking")
 
     return data.summary
 
@@ -316,5 +320,7 @@ def generate_report(
     pdf = MarkdownPdf(toc_level=2)
     pdf.add_section(Section(report_content))
     pdf.save(report_file_path)
+
+    logger.success("success generate report")
 
     return str(report_file_path)
