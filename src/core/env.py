@@ -31,3 +31,6 @@ GEMINI_MODEL_TTS = _required_env("GEMINI_MODEL_TTS")
 # Env Supabase
 SUPABASE_URL = _required_env("SUPABASE_URL")
 SUPABASE_KEY = _required_env("SUPABASE_KEY")
+
+# Env Telegram
+TELEGRAM_BOT_TOKEN = _required_env("TELEGRAM_BOT_TOKEN")
