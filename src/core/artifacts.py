@@ -5,7 +5,7 @@ from typing import Optional, TypedDict # mengelola struktur datanya
 
 class Artifact(TypedDict):
     path: str
-    kind: str # menyimpan jenis file "audio" / "document"
+    kind: str # menyimpan jenis file "audio" | "document"
     caption: Optional[str]
 
 _artifacts: contextvars.ContextVar[Optional[list[Artifact]]] = contextvars.ContextVar(
