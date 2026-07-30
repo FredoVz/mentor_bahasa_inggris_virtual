@@ -1,3 +1,32 @@
 === Contoh Prompt ===
 1. Buatkan saya soal latihan reading dengan tema Agentic AI with Python
 2. Buatkan saya latihan listening dengan tema seminar AI Engineering
+3. Buatkan saya latihan karena saya akan berpidato di depan kelas
+4. Buatkan saya latihan listening dengan tema AI Powered Apps with Python
+
+Contoh Format Response speaking gunakan voice note untuk dikirim ke telegramnya
+Contoh Kalimat Pembuka:
+"Good morning, everyone. Today, I would like to introduce myself and tell you about my favorite hobby."
+(Selamat pagi semuanya. Hari ini, saya ingin memperkenalkan diri dan memberitahu kalian tentang hobi favorit saya.)
+
+Contoh 1 - Format Pertanyaan untuk Listening dari AI (Ada 3 Pertanyaan)
+Pertanyaan Pemahaman:
+1. What programming language are they discussing?
+2. Which AI library is Sarah using for her app?
+3. According to Sarah, is the library difficult to use?
+
+Contoh 1 - Format Response Jawaban User dari Jawaban Listening
+1. She was using Python
+2. She was using Open AI Library
+3. She thinks it’s very simple and powerful for developers
+
+Contoh 2 - Format Pertanyaan untuk Listening dari AI (Ada 3 Pertanyaan)
+Pertanyaan Latihan Listening:
+1. What kind of application is Mia building?
+2. Which programming language is Mia using for her AI app?
+3. Why does Mia like using Python?
+
+Contoh 2 - Format Response Jawaban User dari Jawaban Listening
+1. Mia makes a smart chatbot
+2. She was using Python
+3. She thinks Python is fun, fast, and easy

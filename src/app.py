@@ -185,11 +185,13 @@ def run():
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
     app.add_handler(MessageHandler(filters.VOICE, handle_voice))
 
-    # reminder
+    # reminder (jam 8 pagi)
     target_time = time(hour=8, minute=0, second=0, tzinfo=timezone)
     app.job_queue.run_daily(
         callback=task_reminder, time=target_time, name="task_reminder"
     )
+
+    # testing reminder
     # app.job_queue.run_repeating(callback=task_reminder, interval=5, first=0)
 
     app.add_error_handler(error_handler)
