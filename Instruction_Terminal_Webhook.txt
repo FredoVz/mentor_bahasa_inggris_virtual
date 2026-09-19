@@ -1,0 +1,20 @@
+Terminal cara jalankan API
+# uv run fastapi dev
+
+Hostname
+# http://127.0.0.1:8000/
+# localhost:8000
+
+Terminal untuk coba post
+# curl -X POST http://127.0.0.1:8000/post / localhost:8000/post
+# curl.exe -X POST localhost:8000/post
+
+# Invoke-WebRequest -Method POST -Uri http://127.0.0.1:8000/post
+
+Terminal Webhook API
+# curl.exe -X POST localhost:8000/webhook \
+# -H "Content-Type: application/json" \
+# -d '{"data": "ini contoh data dari server telegram"}'
+
+Terminal Webhook API for powershell windows
+# curl.exe -X POST http://localhost:8000/webhook -H "Content-Type: application/json" -d "{\`"data\`": \`"ini contoh data dari server telegram\`"}"
