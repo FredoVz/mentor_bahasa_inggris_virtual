@@ -129,7 +129,7 @@ def _listening_generate_audio_script(generate_script: ListeningExerciseSchema):
 
     response = gemini_client.models.generate_content(
         model=model,
-        contents=parts,
+        contents=[{"role": "user", "parts": parts}],
         config=types.GenerateContentConfig(
             response_modalities=["AUDIO"],
             speech_config=types.SpeechConfig(
@@ -331,13 +331,23 @@ def generate_report(
     data = LearningReportSchema.model_validate(json.loads(response.text))
     report_content = data.markdown_content
 
-    env.OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    report_file_path = env.OUTPUT_DIR / f"laporan-belajar-{timestamp}.pdf"
+    report_file_path = f"laporan-belajar-{timestamp}.pdf"
+
+    pdf_bytes = io.BytesIO()
 
     pdf = MarkdownPdf(toc_level=2)
     pdf.add_section(Section(report_content))
-    pdf.save(report_file_path)
+    pdf.save_bytes(pdf_bytes)
 
-    logger.success("success generate report")
+    pdf_file_bytes = pdf_bytes.getvalue()
 
-    return str(report_file_path)
+    # upload ke supabase storage
+    result_upload = supabase_client.storage.from_("reports").upload(
+        path=report_file_path,
+        file=pdf_file_bytes,
+        file_options={"content-type": "application/json"},
+    )
+
+    logger.success(f"berhasil membuat laporan: {result_upload.path}")
+
+    return result_upload.path
