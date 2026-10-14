@@ -118,11 +118,14 @@ def _listening_generate_audio_script(generate_script: ListeningExerciseSchema):
     speaker_one = generate_script.speaker_one
     speaker_two = generate_script.speaker_two
 
-    prompt = f"Buatkan audio (text-to-speech) dari percakapan antara dua orang pada script berikut ini: \n{script}"
+    # ubah setiap item (Pydantic) menjadi dictionary part yang dikenali oleh gemini model
+    parts = [
+        line.model_dump() for line in script
+    ] # list of dictionary yang dibutuhkan oleh model gemini, gemini-3.8-flash-tts
 
     response = gemini_client.models.generate_content(
         model=model,
-        contents=prompt,
+        contents=parts,
         config=types.GenerateContentConfig(
             response_modalities=["AUDIO"],
             speech_config=types.SpeechConfig(
