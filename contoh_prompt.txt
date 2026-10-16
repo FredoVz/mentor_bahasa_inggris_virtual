@@ -30,3 +30,6 @@ Contoh 2 - Format Response Jawaban User dari Jawaban Listening
 1. Mia makes a smart chatbot
 2. She was using Python
 3. She thinks Python is fun, fast, and easy
+
+# Contoh 3 - Prompt untuk mengets supabase storage
+Buatkan saya latihan listening dengan tema pertandingan Indonesia versus Thailand pada final sepak bola FIFA ASEAN 2026
