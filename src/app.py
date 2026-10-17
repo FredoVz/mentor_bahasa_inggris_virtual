@@ -30,7 +30,6 @@ from src.core.artifacts import Artifact
 timezone = ZoneInfo("Asia/Jakarta")
 
 chat_repository = ChatRepository()
-lead_agent = LeadAgent()
 
 # python-telegram-bot config
 bot_config = Defaults(parse_mode=ParseMode.MARKDOWN_V2, tzinfo=timezone)
@@ -61,18 +60,24 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def report_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+    user_id = update.message.from_user.id
+
+    lead_agent = LeadAgent(user_id=user_id)
+
     await update.message.reply_text(
         to_telegram_markdown("laporan sedang kami buat, mohon tunggu...")
     )
 
-    user_id = update.message.from_user.id
     username = update.message.from_user.username
+
+    lead_agent = LeadAgent(user_id=user_id)
 
     end_date = date.today()
     start_date = end_date - timedelta(days=7)
 
     report_file_path = lead_agent.handle_report(
-        user_id=user_id, username=username, start_date=start_date, end_date=end_date
+        username=username, start_date=start_date, end_date=end_date
     )
 
     # ambil (download) laporan belajar dari supabase storage
@@ -117,16 +122,17 @@ async def _send_artifact(update: Update, artifact: Artifact):
 
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
+    user_id = update.message.from_user.id
+
+    lead_agent = LeadAgent(user_id=user_id)
+
     reply_text = await update.message.reply_text(
         to_telegram_markdown("mentor sedang menyiapkan jawaban...")
     )
 
-    user_id = update.message.from_user.id
     user_message = update.message.text
 
-    response = lead_agent.handle_send_message(
-        user_id=user_id, message_text=user_message
-    )
+    response = lead_agent.handle_send_message(message_text=user_message)
 
     safe_text = to_telegram_markdown(response["text"])
 
@@ -145,6 +151,8 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user_id = update.message.from_user.id
 
+    lead_agent = LeadAgent(user_id=user_id)
+
     # download file audio dari telegram
     env.TEMP.mkdir(parents=True, exist_ok=True)
     voice_file = await context.bot.get_file(update.message.voice.file_id)
@@ -152,7 +160,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await voice_file.download_to_drive(str(voice_file_path))
 
     evaluation_speaking_result = lead_agent.handle_send_voice(
-        user_id=user_id, voice_file_path=voice_file_path
+        voice_file_path=voice_file_path
     )
 
     safe_text = to_telegram_markdown(evaluation_speaking_result)
