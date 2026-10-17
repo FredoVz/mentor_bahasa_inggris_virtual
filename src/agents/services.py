@@ -342,7 +342,7 @@ def generate_report(
     pdf_file_bytes = pdf_bytes.getvalue()
 
     # upload ke supabase storage
-    result_upload = supabase_client.storage.from_("reports").upload(
+    result_upload = supabase_client.storage.from_("artifacts").upload(
         path=report_file_path,
         file=pdf_file_bytes,
         file_options={"content-type": "application/json"},
