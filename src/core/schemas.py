@@ -10,23 +10,23 @@ from typing import Literal
 class ScriptSpeechMetadata(BaseModel):
     speaker: str = Field(..., description="Nama dari salah satu speaker")
     style: str = Field(
-        ..., 
+        ...,
         description="Gaya bicara dari salah satu speaker. Untuk pria isi dengan: calm and relaxed. Untuk wanita isi dengan cheerful and friendly",
     )
 
 class ListeningExerciseScriptSchema(BaseModel):
     text: str = Field(..., description="kalimat yang disampaikan oleh speaker")
-    speech_metadata: ScriptSpeechMetadata = Field()
+    speech_metadata: ScriptSpeechMetadata
 
 class ListeningExerciseSchema(BaseModel):
     speaker_one: str = Field(..., description="Nama pembicara pertama, misalnya: 'Joe'")
     speaker_two: str = Field(..., description="Nama pembicara kedua, misalnya: 'Jane'")
     script: list[ListeningExerciseScriptSchema] = Field(
-        ..., 
+        ...,
         description="Dialog yang dibacakan oleh TTS (Text-to-Speech)",
     )
     questions: list[str] = Field(
-        ..., 
+        ...,
         description="Daftar pertanyaan untuk menguji pemahaman peserta berdasarkan `script`",
     )
 
@@ -37,7 +37,7 @@ class EvaluateUserIntentionSchema(BaseModel):
 
 class LearningSkillTypesSchema(BaseModel): # item latihan yang dilakukan peserta
     category: str = Field(
-        ..., 
+        ...,
         description="Salah satu kategori skill_types: reading, speaking, writing, dan listening",
     )
     title: str = Field(..., description="Judul latihan")
@@ -61,7 +61,7 @@ class EvaluateSpeakingSchema(BaseModel):
         ..., description="Catatan perbaikan pengucapan bahasa inggris untuk peserta"
     )
     score: str = Field(
-        ..., 
+        ...,
         description="Rentang nilai dari 1 - 10 untuk pengucapan bahasa inggris dari peserta",
     )
     summary: str = Field(..., description="Gabungan antara correction dan score")
