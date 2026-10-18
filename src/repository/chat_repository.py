@@ -27,7 +27,7 @@ class ChatRepository:
         )
 
         return result
-    
+
     def save_user(self, user_id: int, username: str, chat_id: int):
         exist_user = (
             self.supabase.table("chat_users")
@@ -39,7 +39,7 @@ class ChatRepository:
         if len(exist_user.data) > 0:
             logger.debug(f"user {user_id} sudah terdaftar")
             return # berhenti
-        
+
         result = (
             self.supabase.table("chat_users")
             .insert({"user_id": user_id, "username": username, "chat_id": chat_id})
@@ -47,13 +47,13 @@ class ChatRepository:
         )
 
         return result
-    
+
     def save_artifact(self, user_id: int, artifact_path):
         self.supabase.table("chat_histories").insert(
             {
-                "user_id": user_id, 
-                "role": "model", 
-                "message_text": "[audio]", 
+                "user_id": user_id,
+                "role": "model",
+                "message_text": "[audio]",
                 "artifact": str(artifact_path),
             }
         ).execute()
