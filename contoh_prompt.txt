@@ -33,3 +33,9 @@ Contoh 2 - Format Response Jawaban User dari Jawaban Listening
 
 # Contoh 3 - Prompt untuk mengets supabase storage
 Buatkan saya latihan listening dengan tema pertandingan Indonesia versus Thailand pada final sepak bola FIFA ASEAN 2026
+
+# Contoh 4 - Test Context Window
+Saya akan ada interview kerja sebagai senior software engineer dengan perusahaan Singapura, rekomendasikan latihan apa yang sesuai untuk saya?
+
+# Contoh 5 - Test Context Window
+Saya perlu latihan listening dengan tema AI Engineering
